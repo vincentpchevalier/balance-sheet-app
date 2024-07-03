@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-function Cell({ children, classModifier }) {
+function BalanceCell({ children, classModifier }) {
 	return <span className={`cell ${classModifier}`}>{children}</span>;
 }
 
-export default Cell;
+export default BalanceCell;
