@@ -39,7 +39,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<h1>Balance Sheet</h1>
+			<h1>Expense Tracker</h1>
 			<TrackingForm onAddEntry={handleAddEntry} />
 			<BalanceSheet entries={entries} totalBalance={totalBalance} />
 		</div>
