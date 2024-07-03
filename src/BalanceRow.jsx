@@ -1,10 +1,13 @@
-function BalanceRow() {
+/* eslint-disable react/prop-types */
+function BalanceRow({ entry }) {
 	return (
 		<li>
-			<span className="source">Rent</span>
-			<span className="category">Category</span>
-			<span className="income">0</span>
-			<span className="expense">-1</span>
+			<span className="source">{entry.source}</span>
+			<span className="category">{entry.category}</span>
+			<span className="income">{entry.amount > 0 ? entry.amount : ''}</span>
+			<span className="expense">
+				{entry.amount < 0 ? Math.abs(entry.amount) : ''}
+			</span>
 		</li>
 	);
 }
