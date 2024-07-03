@@ -1,13 +1,16 @@
 /* eslint-disable react/prop-types */
 import BalanceRow from './BalanceRow';
 
-function BalanceSheet({ entries }) {
+function BalanceSheet({ entries, totalBalance }) {
 	return (
-		<ul className="balance-sheet">
-			{entries.map((entry, index) => (
-				<BalanceRow key={`${entry.source}-${index}`} entry={entry} />
-			))}
-		</ul>
+		<div className="balance-sheet">
+			<ul className="balance-rows">
+				{entries.map((entry, index) => (
+					<BalanceRow key={`${entry.source}-${index}`} entry={entry} />
+				))}
+			</ul>
+			<p className="balance">Balance: {totalBalance}</p>
+		</div>
 	);
 }
 

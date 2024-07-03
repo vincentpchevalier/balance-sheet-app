@@ -22,10 +22,13 @@ const initialEntries = [
 
 function App() {
 	const [entries, setEntries] = useState(initialEntries);
+
+	const totalBalance = entries.reduce((acc, entry) => acc + entry.balance, 0);
+
 	return (
 		<div className="App">
 			<h1>Balance Sheet</h1>
-			<BalanceSheet entries={entries} />
+			<BalanceSheet entries={entries} totalBalance={totalBalance} />
 		</div>
 	);
 }

@@ -4,9 +4,11 @@ function BalanceRow({ entry }) {
 		<li>
 			<span className="source">{entry.source}</span>
 			<span className="category">{entry.category}</span>
-			<span className="income">{entry.amount > 0 ? entry.amount : ''}</span>
+			<span className="income">
+				{entry.balance > 0 ? entry.balance : ' #### '}
+			</span>
 			<span className="expense">
-				{entry.amount < 0 ? Math.abs(entry.amount) : ''}
+				{entry.balance < 0 ? Math.abs(entry.balance) : ' #### '}
 			</span>
 		</li>
 	);
