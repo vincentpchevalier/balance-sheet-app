@@ -3,8 +3,9 @@ import BalanceRow from './BalanceRow';
 
 function BalanceSheet({ entries, totalBalance }) {
 	return (
-		<div className="balance-sheet">
-			<ul className="balance-rows">
+		<div id="balanceSheet">
+			<h2>Balance Sheet</h2>
+			<ul className="balanceRows">
 				{entries.map((entry, index) => (
 					<BalanceRow key={`${entry.source}-${index}`} entry={entry} />
 				))}
