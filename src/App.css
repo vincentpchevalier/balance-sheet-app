@@ -4,6 +4,11 @@
 	padding: 2rem;
 }
 
+ul {
+	list-style: none;
+	padding: 0;
+}
+
 .App {
 	display: flex;
 	flex-wrap: wrap;
@@ -14,9 +19,9 @@
 	}
 
 	& > *:not(h1) {
-		background-color: rgb(0, 0, 52);
-		flex-grow: 1;
+		background-color: rgba(35, 35, 60, 0.471);
 		padding: 1rem 2rem 2rem;
+		border: 0.1rem solid #646cff;
 	}
 }
 
@@ -24,6 +29,68 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	align-items: flex-start;
-	gap: 1rem;
+	align-items: stretch;
+	gap: 1.5rem;
+	flex-grow: 1;
+
+	& fieldset {
+		display: flex;
+		flex-direction: column;
+		justify-content: stretch;
+		align-items: stretch;
+		border: none;
+		gap: 0.5rem;
+		padding: 0;
+
+		& > * {
+			flex-grow: 2;
+		}
+	}
+}
+
+input,
+select {
+	padding: 0.75rem 0.5rem;
+}
+
+.balanceSheetContainer {
+	flex-grow: 2;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	/* gap: 2rem; */
+
+	.balance {
+		align-self: flex-end;
+		margin-top: 10rem;
+		padding: 1rem;
+		border: 0.1rem solid #646cff;
+	}
+}
+
+#balanceSheet {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	width: 100%;
+}
+
+.balanceRow {
+	display: contents;
+}
+
+.source,
+.category,
+.income,
+.expense {
+	padding: 1rem 0;
+	border-bottom: 0.1rem solid #ddd;
+}
+
+.income {
+	color: limegreen;
+}
+
+.expense {
+	color: coral;
 }
