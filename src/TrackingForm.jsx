@@ -23,6 +23,9 @@ function TrackingForm({ onAddEntry }) {
 
 		onAddEntry(newEntry);
 
+		// clear form
+		console.log('clear form');
+		setDate('');
 		setDescription('');
 		setAmount('');
 		setCategory('Food');
@@ -38,6 +41,7 @@ function TrackingForm({ onAddEntry }) {
 						type="date"
 						name="date"
 						id="date"
+						value={date}
 						onChange={(ev) => setDate(ev.target.value)}
 					/>
 				</fieldset>
@@ -47,6 +51,7 @@ function TrackingForm({ onAddEntry }) {
 						type="text"
 						name="description"
 						placeholder="Description"
+						value={description}
 						onChange={(ev) => setDescription(ev.target.value)}
 					/>
 				</fieldset>
@@ -56,6 +61,7 @@ function TrackingForm({ onAddEntry }) {
 						type="text"
 						name="amount"
 						placeholder="Amount"
+						value={amount}
 						onChange={(ev) => setAmount(+ev.target.value)}
 					/>
 				</fieldset>
