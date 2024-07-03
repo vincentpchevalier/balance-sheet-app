@@ -7,10 +7,10 @@ function BalanceSheet({ entries, totalBalance }) {
 			<h2>Balance Sheet</h2>
 			<ul id="balanceSheet">
 				<li className="balanceRow">
-					<span className="source">Description</span>
-					<span className="category">Category</span>
-					<span className="income">Incoming</span>
-					<span className="expense">Outgoing</span>
+					<span className="cell">Description</span>
+					<span className="cell">Category</span>
+					<span className="cell">Incoming</span>
+					<span className="cell">Outgoing</span>
 				</li>
 				{entries.map((entry, index) => (
 					<BalanceRow key={`${entry.source}-${index}`} entry={entry} />
