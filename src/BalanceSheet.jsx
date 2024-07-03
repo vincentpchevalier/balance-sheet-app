@@ -13,18 +13,20 @@ function BalanceSheet({ entries, totalBalance }) {
 					<BalanceCell classModifier={'header'}>Income</BalanceCell>
 					<BalanceCell classModifier={'header'}>Expense</BalanceCell>
 				</BalanceRow>
-				{entries.map((entry) => (
-					<BalanceRow key={entry.id} entry={entry}>
-						<BalanceCell classModifier={''}>{entry.description}</BalanceCell>
-						<BalanceCell classModifier={''}>{entry.category}</BalanceCell>
-						<BalanceCell classModifier={'income'}>
-							{entry.balance > 0 ? entry.balance : ''}
-						</BalanceCell>
-						<BalanceCell classModifier={'expense'}>
-							{entry.balance < 0 ? Math.abs(entry.balance) : ''}
-						</BalanceCell>
-					</BalanceRow>
-				))}
+				{entries
+					.sort((a, b) => a.date - b.date)
+					.map((entry) => (
+						<BalanceRow key={entry.id} entry={entry}>
+							<BalanceCell classModifier={''}>{entry.description}</BalanceCell>
+							<BalanceCell classModifier={''}>{entry.category}</BalanceCell>
+							<BalanceCell classModifier={'income'}>
+								{entry.balance > 0 ? entry.balance : ''}
+							</BalanceCell>
+							<BalanceCell classModifier={'expense'}>
+								{entry.balance < 0 ? Math.abs(entry.balance) : ''}
+							</BalanceCell>
+						</BalanceRow>
+					))}
 			</ul>
 			<p className="balance">Balance: {totalBalance}</p>
 		</div>
