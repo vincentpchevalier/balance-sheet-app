@@ -1,17 +1,6 @@
 /* eslint-disable react/prop-types */
-function BalanceRow({ entry }) {
-	return (
-		<li className="balanceRow">
-			<span className="cell">{entry.description}</span>
-			<span className="cell">{entry.category}</span>
-			<span className="cell income">
-				{entry.balance > 0 ? entry.balance : ''}
-			</span>
-			<span className="cell expense">
-				{entry.balance < 0 ? Math.abs(entry.balance) : ''}
-			</span>
-		</li>
-	);
+function BalanceRow({ children }) {
+	return <li className="balanceRow">{children}</li>;
 }
 
 export default BalanceRow;

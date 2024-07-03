@@ -80,8 +80,13 @@ select {
 }
 
 .cell {
-	padding: 1rem 0;
+	padding: 1rem;
 	border-bottom: 0.1rem solid #ddd;
+}
+
+.cell.header {
+	font-weight: bold;
+	background-color: rgba(122, 122, 211, 0.184);
 }
 
 .income {
