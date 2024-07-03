@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-function BalanceRow({ children }) {
-	return <li className="balanceRow">{children}</li>;
+function BalanceRow() {
+	return <li className="balanceRow">{/* cells */}</li>;
 }
 
 export default BalanceRow;

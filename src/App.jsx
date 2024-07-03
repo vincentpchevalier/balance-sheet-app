@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './App.css';
 import BalanceSheet from './BalanceSheet';
 import TrackingForm from './TrackingForm';
@@ -28,20 +27,12 @@ const initialEntries = [
 ];
 
 function App() {
-	const [entries, setEntries] = useState(initialEntries);
-
-	const totalBalance = entries.reduce((acc, entry) => acc + entry.balance, 0);
-
-	function handleAddEntry(entry) {
-		console.log('new entry: ', entry);
-		setEntries((entries) => [...entries, entry]);
-	}
-
 	return (
 		<div className="App">
 			<h1>Expense Tracker</h1>
-			<TrackingForm onAddEntry={handleAddEntry} />
-			<BalanceSheet entries={entries} totalBalance={totalBalance} />
+			<TrackingForm />
+
+			<BalanceSheet />
 		</div>
 	);
 }
