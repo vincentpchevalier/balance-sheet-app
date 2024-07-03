@@ -2,8 +2,8 @@
 function BalanceRow({ entry }) {
 	return (
 		<li className="balanceRow">
-			<span className="cell source">{entry.source}</span>
-			<span className="cell category">{entry.category}</span>
+			<span className="cell">{entry.description}</span>
+			<span className="cell">{entry.category}</span>
 			<span className="cell income">
 				{entry.balance > 0 ? entry.balance : ''}
 			</span>
