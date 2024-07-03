@@ -10,6 +10,9 @@
 6. Pass entries to BalanceSheet component. Map over entries and pass each entry to BalanceRow component.
 7. Populate BalanceRow component with Source, Category, Income, and Expense. Set up conditional rendering of income and expense. If 0 set to '' else set to the absolute value. The css will render the income and expense as green and red, respectively.
 
+... Create a piece of derived state called totalBalance by reducing the balance of each entry in the entries array.
+... Pass totalBalance to BalanceSheet component. Render totalBalance in BalanceSheet component.
+
 ```txt
 |---src
 |
