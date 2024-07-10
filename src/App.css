@@ -12,9 +12,10 @@ ul {
 .App {
 	display: flex;
 	flex-wrap: wrap;
-	column-gap: 2rem;
+	gap: 2rem;
 
-	& h1 {
+	& h1,
+	& #info {
 		width: 100%;
 	}
 
@@ -22,6 +23,22 @@ ul {
 		background-color: rgba(35, 35, 60, 0.471);
 		padding: 1rem 2rem 2rem;
 		border: 0.1rem solid #646cff;
+	}
+}
+
+#info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 4rem;
+	padding: 1rem 2rem;
+
+	& > * {
+		margin: 0;
+	}
+
+	& h2 {
+		flex-grow: 1;
 	}
 }
 

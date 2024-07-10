@@ -28,6 +28,7 @@ const initialEntries = [
 ];
 
 function App() {
+	const [name, setName] = useState('');
 	const [entries, setEntries] = useState(initialEntries);
 
 	const totalBalance = entries.reduce((acc, entry) => acc + entry.balance, 0);
@@ -37,9 +38,21 @@ function App() {
 		setEntries((entries) => [...entries, entry]);
 	}
 
+	function handleNameInput(nm) {
+		setName(nm);
+	}
+
 	return (
 		<div className="App">
 			<h1>Expense Tracker</h1>
+			<div id="info">
+				<h2>Hi {!name ? '...' : name}</h2>
+				<input
+					type="text"
+					placeholder="What's your name?"
+					onChange={(e) => handleNameInput(e.target.value)}
+				/>
+			</div>
 			<TrackingForm onAddEntry={handleAddEntry} />
 			<BalanceSheet entries={entries} totalBalance={totalBalance} />
 		</div>
