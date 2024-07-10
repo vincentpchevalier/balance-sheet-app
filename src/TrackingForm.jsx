@@ -15,7 +15,7 @@ function TrackingForm({ onAddEntry }) {
 
 		const newEntry = {
 			id: Date.now(),
-			date,
+			date: +new Date(date),
 			description,
 			category,
 			balance: amount,
